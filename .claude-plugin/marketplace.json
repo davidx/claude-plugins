@@ -1,0 +1,14 @@
+{
+  "name": "dx-plugins",
+  "description": "Local plugins",
+  "owner": {
+    "name": "davidx"
+  },
+  "plugins": [
+    {
+      "name": "aura",
+      "description": "Generate Aura.build prompts from simple ideas",
+      "source": "./aura"
+    }
+  ]
+}

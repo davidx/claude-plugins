@@ -18,46 +18,78 @@ Example: `/aura:run dashboard for tracking daily habits`
 ## Process
 
 1. **Generate the prompt** - Use the gen skill logic with default style to create the Aura prompt
-2. **Navigate to Aura.build** - Open https://www.aura.build/create in browser
-3. **Paste the prompt** - Fill the textarea with the generated prompt
-4. **Submit** - Click the submit button
-5. **Wait for completion** - Poll until generation finishes (check for result/preview)
-6. **Export** - Click Export → Download HTML
-7. **Save** - Save the file to `./mockups/` directory in current working directory
+2. **Open in user's browser** - Use system default browser (preserves login session)
+3. **Discover UI elements** - Take screenshot, analyze to find input and submit elements
+4. **Paste the prompt** - Fill the discovered textarea
+5. **Submit** - Click the discovered submit button
+6. **Wait for completion** - Poll until generation finishes
+7. **Export** - Find and click export/download option
+8. **Save** - Save the file to `./mockups/` directory
 
-## Selectors (as of Jan 2026)
+## Browser Strategy
+
+**IMPORTANT**: Use the user's default browser to preserve their Aura.build login session.
+
+On macOS:
+```bash
+open "https://www.aura.build/create"
+```
+
+This opens in their default browser (Brave, Chrome, Safari, etc.) where they're already logged in.
+
+For automation after opening, use Playwright but connect to an existing browser or use CDP.
+
+## Dynamic Selector Discovery
+
+**DO NOT use hardcoded selectors.** The UI may change.
+
+Instead:
+1. Take a screenshot with `mcp__playwright__playwright_screenshot`
+2. Get page HTML with `mcp__playwright__playwright_get_visible_html`
+3. Analyze the screenshot and HTML to identify:
+   - The main text input area (likely a textarea or contenteditable div)
+   - The submit/generate button (look for arrow icon, "Generate" text, or submit type)
+   - The export button (after generation completes)
+4. Use the discovered selectors
+
+## Implementation
 
 ```
-Textarea:     textarea.textarea-custom
-Submit:       button[type="submit"]
-```
+1. Generate the Aura.build prompt
+   - Read config/default-style.md for style preferences
+   - Create detailed prompt following the gen skill's reference docs
 
-## Implementation Steps
-
-```
-1. First, generate the Aura.build prompt using the gen skill's default style
-   - Read config/default-style.md for preferences
-   - Create detailed prompt with all specifications
-
-2. mcp__playwright__playwright_navigate
+2. Navigate to Aura.build
+   mcp__playwright__playwright_navigate
    url: https://www.aura.build/create
 
-3. mcp__playwright__playwright_fill
-   selector: textarea.textarea-custom
-   value: <the generated prompt>
+3. Discover the UI
+   - Take screenshot to visually identify elements
+   - Get HTML to find actual selectors
+   - Look for: textarea, input fields, submit buttons
 
-4. mcp__playwright__playwright_click
-   selector: button[type="submit"]
+4. Fill the prompt
+   - Find the text input element from HTML analysis
+   - Use mcp__playwright__playwright_fill with discovered selector
 
-5. Wait for generation (poll with screenshots every 5-10 seconds)
-   - Look for preview/result to appear
-   - Generation typically takes 30-60 seconds
+5. Submit
+   - Find the submit/generate button
+   - Use mcp__playwright__playwright_click
 
-6. Once complete, find and click Export button
-   - Take screenshot to locate export UI
-   - Click export/download option
+6. Wait for generation
+   - Poll every 10 seconds with screenshots
+   - Look for preview/result appearing
+   - Timeout after 2 minutes
 
-7. Save HTML to ./mockups/aura-{timestamp}.html
+7. Export HTML
+   - Screenshot to find export UI
+   - Click export menu/button
+   - Click download HTML option
+   - Or: get page HTML directly if download fails
+
+8. Save to ./mockups/
+   - Create directory if needed: mkdir -p ./mockups
+   - Save as: mockups/aura-{timestamp}.html
 ```
 
 ## Output
@@ -66,8 +98,10 @@ Submit:       button[type="submit"]
 - Saves HTML file with timestamp: `mockups/aura-YYYY-MM-DD-HHMMSS.html`
 - Reports success with file path
 
-## Error Handling
+## Fallback
 
-- If Aura.build UI changes, take screenshot and report what's visible
-- If generation fails or times out (>2 min), capture error and abort
-- If download fails, try to copy HTML from page source
+If Playwright automation fails:
+1. Generate the prompt and display it to user
+2. Open Aura.build in their browser: `open "https://www.aura.build/create"`
+3. Instruct user to paste prompt manually
+4. After they export, help save to mockups/

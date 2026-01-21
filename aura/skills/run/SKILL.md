@@ -7,7 +7,7 @@ description: Generate prompt, open Aura.build, run it, and download the HTML
 
 Automates the full workflow: generate prompt → paste into Aura.build → run → download HTML.
 
-Uses **agent-browser** to connect to user's existing browser (already logged into Aura.build).
+Uses **agent-browser** with user's Brave profile (preserves Aura.build login).
 
 ## Usage
 
@@ -15,94 +15,43 @@ Uses **agent-browser** to connect to user's existing browser (already logged int
 /aura:run <your idea>
 ```
 
-Example: `/aura:run dashboard for tracking daily habits`
+## Implementation
 
-## Prerequisites
-
-User must have their browser running with remote debugging enabled:
+Claude executes this workflow:
 
 ```bash
-# Brave
-/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --remote-debugging-port=9222
+# Ensure agent-browser installed
+which agent-browser || npm install -g agent-browser
 
-# Chrome
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
-```
+# Launch Brave with user's profile (has their login cookies)
+agent-browser open "https://www.aura.build/create" \
+  --executable-path "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser" \
+  --user-data-dir "$HOME/Library/Application Support/BraveSoftware/Brave-Browser" \
+  --headed
 
-Install agent-browser if needed:
-```bash
-npm install -g agent-browser
-```
-
-## Process
-
-1. **Generate the prompt** - Use gen skill with default style
-2. **Connect to browser** - Via CDP port 9222
-3. **Navigate to Aura.build** - Open https://www.aura.build/create
-4. **Discover UI** - Use `snapshot` for accessibility tree
-5. **Fill prompt** - Use semantic locators to find textarea
-6. **Submit** - Find and click generate button
-7. **Wait for completion** - Poll until done
-8. **Export HTML** - Click export, download
-9. **Save** - Move to `./mockups/`
-
-## Implementation with agent-browser
-
-```bash
-# Connect to user's browser
-agent-browser connect 9222
-
-# Navigate
-agent-browser open "https://www.aura.build/create"
-
-# Get accessibility snapshot to find elements
+# Get accessibility tree
 agent-browser snapshot -i --json
+# Analyze output to find elements
 
-# Find and fill textarea using semantic locators
-agent-browser find placeholder "Reference @ template" fill "<prompt>"
-# Or by role:
-agent-browser find role textbox fill "<prompt>"
+# Fill prompt
+agent-browser find role textbox fill "<generated_prompt>"
 
-# Find and click submit button
+# Submit
 agent-browser find role button click
-# Or by text/label if needed
 
-# Wait for generation (poll)
+# Wait for generation
 agent-browser wait --text "Export" --timeout 120000
 
-# Screenshot to verify
-agent-browser screenshot ./mockups/preview.png
-
-# Click export and download
+# Export HTML
 agent-browser find text "Export" click
-agent-browser wait 1000
-agent-browser find text "Download HTML" click
+agent-browser wait 500
+agent-browser find text "Download" click
 
-# Close connection (keeps browser open)
-agent-browser close
+# Save
+mkdir -p ./mockups
+mv ~/Downloads/aura*.html ./mockups/aura-$(date +%Y-%m-%d-%H%M%S).html
 ```
-
-## Dynamic Element Discovery
-
-Use `snapshot -i --json` to get the accessibility tree with element refs:
-- Returns elements like `@e1`, `@e2`, etc.
-- Shows role, name, text content
-- AI analyzes this to find the right elements
-
-Use semantic locators instead of CSS selectors:
-- `find role textbox` - Find by ARIA role
-- `find text "Generate"` - Find by visible text
-- `find label "Prompt"` - Find by form label
-- `find placeholder "..."` - Find by placeholder
 
 ## Output
 
-- Creates `./mockups/` directory if needed
-- Saves: `mockups/aura-YYYY-MM-DD-HHMMSS.html`
-- Reports file path on success
-
-## Error Handling
-
-- If not connected: Tell user to launch browser with `--remote-debugging-port=9222`
-- If not logged in: Detected via snapshot, tell user to log in, wait, continue
-- If generation timeout: Report and abort after 2 min
+`mockups/aura-YYYY-MM-DD-HHMMSS.html`

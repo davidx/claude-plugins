@@ -7,6 +7,8 @@ description: Generate prompt, open Aura.build, run it, and download the HTML
 
 Automates the full workflow: generate prompt → paste into Aura.build → run → download HTML.
 
+Uses **agent-browser** to connect to user's existing browser (already logged into Aura.build).
+
 ## Usage
 
 ```
@@ -15,85 +17,92 @@ Automates the full workflow: generate prompt → paste into Aura.build → run �
 
 Example: `/aura:run dashboard for tracking daily habits`
 
+## Prerequisites
+
+User must have their browser running with remote debugging enabled:
+
+```bash
+# Brave
+/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser --remote-debugging-port=9222
+
+# Chrome
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
+```
+
+Install agent-browser if needed:
+```bash
+npm install -g agent-browser
+```
+
 ## Process
 
-1. **Generate the prompt** - Use the gen skill logic with default style
-2. **Navigate to Aura.build** - Open https://www.aura.build/create
-3. **Handle login if needed** - If not logged in, wait for user to log in
-4. **Discover UI elements** - Analyze page to find input and submit
-5. **Paste the prompt** - Fill the textarea
-6. **Submit** - Click generate
+1. **Generate the prompt** - Use gen skill with default style
+2. **Connect to browser** - Via CDP port 9222
+3. **Navigate to Aura.build** - Open https://www.aura.build/create
+4. **Discover UI** - Use `snapshot` for accessibility tree
+5. **Fill prompt** - Use semantic locators to find textarea
+6. **Submit** - Find and click generate button
 7. **Wait for completion** - Poll until done
-8. **Export** - Download HTML
-9. **Save** - Save to `./mockups/`
+8. **Export HTML** - Click export, download
+9. **Save** - Move to `./mockups/`
 
-## Login Handling
+## Implementation with agent-browser
 
-If the page shows a login prompt or "Sign In" button:
-1. Tell the user to log in manually in the browser window
-2. Wait and poll until the create page is ready (textarea visible)
-3. Then continue with automation
+```bash
+# Connect to user's browser
+agent-browser connect 9222
 
-Do NOT use fallbacks. Wait for the user to complete login.
+# Navigate
+agent-browser open "https://www.aura.build/create"
 
-## Dynamic Selector Discovery
+# Get accessibility snapshot to find elements
+agent-browser snapshot -i --json
 
-**DO NOT use hardcoded selectors.**
+# Find and fill textarea using semantic locators
+agent-browser find placeholder "Reference @ template" fill "<prompt>"
+# Or by role:
+agent-browser find role textbox fill "<prompt>"
 
-1. Take screenshot with `mcp__playwright__playwright_screenshot`
-2. Read screenshot image to visually identify elements
-3. Get HTML with `mcp__playwright__playwright_get_visible_html`
-4. Analyze to find:
-   - Text input (textarea, contenteditable, input)
-   - Submit button (arrow icon, type="submit", "Generate" text)
-   - Export controls (after generation)
-5. Use discovered selectors
+# Find and click submit button
+agent-browser find role button click
+# Or by text/label if needed
 
-## Implementation
+# Wait for generation (poll)
+agent-browser wait --text "Export" --timeout 120000
 
+# Screenshot to verify
+agent-browser screenshot ./mockups/preview.png
+
+# Click export and download
+agent-browser find text "Export" click
+agent-browser wait 1000
+agent-browser find text "Download HTML" click
+
+# Close connection (keeps browser open)
+agent-browser close
 ```
-1. Generate the Aura.build prompt
-   - Read config/default-style.md for preferences
-   - Create detailed prompt per gen skill reference
 
-2. Navigate
-   mcp__playwright__playwright_navigate url: https://www.aura.build/create
+## Dynamic Element Discovery
 
-3. Screenshot and analyze
-   - Take screenshot, read it
-   - Get HTML
-   - Check if logged in (look for textarea vs login prompt)
+Use `snapshot -i --json` to get the accessibility tree with element refs:
+- Returns elements like `@e1`, `@e2`, etc.
+- Shows role, name, text content
+- AI analyzes this to find the right elements
 
-4. If not logged in:
-   - Tell user: "Please log in to Aura.build in the browser window"
-   - Poll every 5 seconds until textarea appears
-
-5. Fill prompt
-   - Discover textarea selector from HTML
-   - mcp__playwright__playwright_fill with discovered selector
-
-6. Submit
-   - Discover submit button from HTML
-   - mcp__playwright__playwright_click
-
-7. Wait for generation
-   - Poll every 10 seconds with screenshots
-   - Look for result/preview
-   - Max 2 minutes
-
-8. Export
-   - Screenshot to find export UI
-   - Click export button
-   - Click download HTML
-   - Get downloaded file path
-
-9. Save
-   - mkdir -p ./mockups
-   - Move/copy HTML to mockups/aura-{timestamp}.html
-```
+Use semantic locators instead of CSS selectors:
+- `find role textbox` - Find by ARIA role
+- `find text "Generate"` - Find by visible text
+- `find label "Prompt"` - Find by form label
+- `find placeholder "..."` - Find by placeholder
 
 ## Output
 
 - Creates `./mockups/` directory if needed
 - Saves: `mockups/aura-YYYY-MM-DD-HHMMSS.html`
 - Reports file path on success
+
+## Error Handling
+
+- If not connected: Tell user to launch browser with `--remote-debugging-port=9222`
+- If not logged in: Detected via snapshot, tell user to log in, wait, continue
+- If generation timeout: Report and abort after 2 min

@@ -19,24 +19,45 @@ Example: `/aura:run dashboard for tracking daily habits`
 
 1. **Generate the prompt** - Use the gen skill logic with default style to create the Aura prompt
 2. **Navigate to Aura.build** - Open https://www.aura.build/create in browser
-3. **Paste the prompt** - Find the input/textarea and paste the generated prompt
-4. **Submit** - Click the generate/run button
-5. **Wait for completion** - Monitor for the result to finish generating
+3. **Paste the prompt** - Fill the textarea with the generated prompt
+4. **Submit** - Click the submit button
+5. **Wait for completion** - Poll until generation finishes (check for result/preview)
 6. **Export** - Click Export → Download HTML
 7. **Save** - Save the file to `./mockups/` directory in current working directory
 
-## Implementation
-
-Use Playwright MCP tools to automate the browser:
+## Selectors (as of Jan 2026)
 
 ```
-1. mcp__playwright__playwright_navigate to https://www.aura.build/create
-2. mcp__playwright__playwright_screenshot to see the page
-3. mcp__playwright__playwright_fill to enter the prompt
-4. mcp__playwright__playwright_click to submit
-5. Wait/poll for completion (screenshot to check)
-6. mcp__playwright__playwright_click on export menu
-7. mcp__playwright__playwright_click on download HTML option
+Textarea:     textarea.textarea-custom
+Submit:       button[type="submit"]
+```
+
+## Implementation Steps
+
+```
+1. First, generate the Aura.build prompt using the gen skill's default style
+   - Read config/default-style.md for preferences
+   - Create detailed prompt with all specifications
+
+2. mcp__playwright__playwright_navigate
+   url: https://www.aura.build/create
+
+3. mcp__playwright__playwright_fill
+   selector: textarea.textarea-custom
+   value: <the generated prompt>
+
+4. mcp__playwright__playwright_click
+   selector: button[type="submit"]
+
+5. Wait for generation (poll with screenshots every 5-10 seconds)
+   - Look for preview/result to appear
+   - Generation typically takes 30-60 seconds
+
+6. Once complete, find and click Export button
+   - Take screenshot to locate export UI
+   - Click export/download option
+
+7. Save HTML to ./mockups/aura-{timestamp}.html
 ```
 
 ## Output
@@ -48,5 +69,5 @@ Use Playwright MCP tools to automate the browser:
 ## Error Handling
 
 - If Aura.build UI changes, take screenshot and report what's visible
-- If generation fails, capture error message
-- If download fails, try alternative export method
+- If generation fails or times out (>2 min), capture error and abort
+- If download fails, try to copy HTML from page source

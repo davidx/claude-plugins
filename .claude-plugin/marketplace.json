@@ -9,6 +9,11 @@
       "name": "aura",
       "description": "Generate Aura.build prompts from simple ideas",
       "source": "./aura"
+    },
+    {
+      "name": "proceed",
+      "description": "Auto-continue through tasks without stopping for confirmation",
+      "source": "./proceed"
     }
   ]
 }

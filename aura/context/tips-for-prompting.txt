@@ -1,0 +1,570 @@
+Tips for Prompting
+Learn how to craft effective prompts for HTML generation and get better results with Aura's AI-powered design tools. Well-structured prompts are the key to getting precise, usable output from AI tools.
+
+HTML Generation Tips
+Creating effective prompts for HTML generation can significantly improve your results. Here are some specialized tips:
+
+1
+Specify the framework or library
+Mention whether you want vanilla HTML/CSS or a specific framework like Tailwind CSS, Bootstrap, or Material UI.
+
+Generate a contact form using Tailwind CSS with responsive design and form validation.
+
+2
+Define the component structure
+Outline the key elements you need.
+
+Create a product card with image at the top, product title, price, short description, and an 'Add to Cart' button.
+
+3
+Include responsive behavior requirements
+Specify how your design should adapt to different screen sizes.
+
+Create a navbar that collapses into a hamburger menu on mobile devices under 768px width.
+
+4
+Reference a style guide or brand colors
+Provide color codes or style information.
+
+Use the color palette #3A86FF (primary), #FF006E (accent), and #FFFFFF (background) with rounded corners (8px radius).
+
+5
+Mention interactive elements
+Describe any animations or effects.
+
+Include a hover effect that scales the card by 1.05x and adds a subtle shadow when users hover over the product.
+
+6
+Provide a reference or inspiration
+Point to existing designs.
+
+Create a testimonial section similar to those on Airbnb's homepage with avatar, quote, and customer name.
+
+Hero Section Example
+
+Component Prompts
+These templates are starting points. For best results, customize them with your specific design requirements.
+
+Use these sample prompts as templates for common UI components:
+
+Hero Section
+Generate a modern hero section for a SaaS product with Tailwind CSS. Include a headline, subheading, CTA button, and a floating mockup image on the right side. Make it fully responsive.
+
+Pricing Table
+Create a 3-tier pricing table with Tailwind CSS. Each card should have a plan name, price, feature list with checkmarks, and a signup button. Highlight the recommended plan and make it responsive.
+
+Navigation Bar
+Design a sticky navigation bar with logo on left, navigation links in center, and login/signup buttons on right. Make it collapse to a hamburger menu on mobile, with a smooth slide-in animation.
+
+Testimonial Cards
+Create a testimonial section with 3 cards in a row. Each card should have a customer image, quote, name, and position. Use a clean design with subtle shadows and rounded corners. Add a star rating at the top of each card.
+
+Responsive Design
+Writing effective prompts for responsive designs:
+
+Responsive Design Strategies
+1
+Specify breakpoints
+Define exactly when layouts should change.
+
+Create a layout that switches from 3 columns on desktop (1024px+) to 2 columns on tablet (768px to 1023px) and 1 column on mobile (below 768px).
+
+2
+Describe mobile-specific behaviors
+Detail how elements should adapt.
+
+On mobile, the navigation menu should collapse into a hamburger icon that, when clicked, reveals a full-screen overlay menu with a close button in the top-right corner.
+
+3
+Prioritize content for mobile
+Explain what content is most important.
+
+On mobile, prioritize the sign-up form by placing it above the feature list. On desktop, display them side-by-side.
+
+4
+Specify touch-friendly elements
+Request appropriate sizing for touch interfaces.
+
+Make all buttons at least 44px tall on mobile for better touch targets, with 16px spacing between interactive elements.
+
+Device Framing
+
+For more realistic mockups, request your UI to be framed within appropriate device containers:
+
+Desktop Browser Frame
+Frame your design in a browser window with traffic lights (close, minimize, maximize buttons).
+
+Create a landing page and frame it within a modern browser window with macOS-style traffic light buttons (red, yellow, green) in the top-left corner.
+
+iPhone Frame
+Showcase mobile designs within an iPhone frame with notch and buttons.
+
+Design a mobile app screen for a fitness tracker, and place it inside a modern iPhone frame with the notch/Dynamic Island at the top.
+
+iPad Frame
+Present tablet designs in an iPad frame with characteristic bezels.
+
+Create a tablet version of our dashboard and display it within an iPad Pro frame with thin bezels and rounded corners.
+
+Pro Tip
+When requesting device frames, include details about the device's environment to make mockups more realistic. For example, specify desktop wallpaper for browser frames, or add reflections and shadows to mobile devices.
+
+Framing Implementation Tips
+1
+Specify exact device models
+"Frame this design in an iPhone 14 Pro" is better than "put this in a phone frame."
+
+2
+Request contextual elements
+Include URL bars for browser frames or status bars with realistic time/battery indicators for mobile frames.
+
+3
+Add environmental context
+"Show the iPhone on a wooden desk with soft lighting" creates more realistic mockups.
+
+4
+Consider angle and perspective
+"Show the iPad at a slight angle (15°) with a subtle shadow beneath it" adds depth to presentations.
+
+Styling & Frameworks
+Tips for specifying styling and frameworks in your prompts:
+
+Framework Selection
+Be explicit about CSS frameworks
+"Generate a contact form using Bootstrap 5 with form validation and floating labels" is better than just "Create a contact form."
+
+Class Patterns
+Include specific class patterns
+For Tailwind users: "Use Tailwind's container class with mx-auto and px-4 for proper spacing and centering."
+
+Component Libraries
+Specify design system or component library
+"Create a dashboard layout using Material UI components with a sidebar, header, and main content area."
+
+CSS Architecture
+Mention CSS architecture
+"Use BEM methodology for CSS class naming and organization with separate component-based stylesheets."
+
+Reference Known Styles
+Reference your favorite apps
+"Design a settings page in the style of Apple's iOS interface" or "Create a music player with Spotify's dark theme aesthetic."
+
+Typography & Fonts
+Typography plays a crucial role in UI design. Effective typography enhances readability, establishes hierarchy, and strengthens brand identity. Here's how to leverage modern fonts in your designs:
+
+Typography Fundamentals
+When requesting designs, be specific about typography preferences including font family, weight, size, line height, and letter spacing. This ensures consistent, readable, and visually appealing text across your interface.
+
+Modern Web Fonts
+Sans-Serif UI Fonts
+Monospace
+Serif
+Display
+Inter
+Popular
+Inter Sans
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+A versatile, highly legible sans-serif designed for screens.
+
+300
+400
+500
+600
+700
+Geist
+Trending
+Geist Sans
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Modern sans-serif by Vercel with compact spacing and softly bent arcs.
+
+300
+400
+500
+600
+700
+Plus Jakarta Sans
+Jakarta Sans
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Friendly sans-serif designed for digital interfaces.
+
+300
+400
+500
+600
+700
+800
+Manrope
+Manrope
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Modern geometric sans-serif with clean lines and balanced proportions.
+
+300
+400
+500
+600
+700
+800
+IBM Plex Sans
+IBM Plex
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Corporate typeface with excellent legibility for enterprise apps.
+
+300
+400
+500
+600
+700
+Geist Mono
+Geist Mono
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Clean monospaced companion to Geist Sans, ideal for code.
+
+300
+400
+500
+600
+700
+Typography & Fonts
+Explore popular fonts and their typography guidelines for various design needs.
+
+Inter
+H1 Display
+2.5rem - 3rem (40-48px)
+H2 Heading
+1.75rem - 2rem (28-32px)
+H3 Subheading
+1.25rem - 1.5rem (20-24px)
+Body Text
+1rem (16px)
+Small Text
+0.875rem (14px)
+Micro / Caption
+0.75rem (12px)
+Geist
+H1 Display
+2.5rem - 3rem (40-48px)
+H2 Heading
+1.75rem - 2rem (28-32px)
+H3 Subheading
+1.25rem - 1.5rem (20-24px)
+Body Text
+1rem (16px)
+Small Text
+0.875rem (14px)
+Micro / Caption
+0.75rem (12px)
+Manrope
+H1 Display
+2.5rem - 3rem (40-48px)
+H2 Heading
+1.75rem - 2rem (28-32px)
+H3 Subheading
+1.25rem - 1.5rem (20-24px)
+Body Text
+1rem (16px)
+Small Text
+0.875rem (14px)
+Micro / Caption
+0.75rem (12px)
+Plus Jakarta Sans
+H1 Display
+2.5rem - 3rem (40-48px)
+H2 Heading
+1.75rem - 2rem (28-32px)
+H3 Subheading
+1.25rem - 1.5rem (20-24px)
+Body Text
+1rem (16px)
+Small Text
+0.875rem (14px)
+Micro / Caption
+0.75rem (12px)
+Geist Mono
+H1 Display
+2.5rem - 3rem (40-48px)
+H2 Heading
+1.75rem - 2rem (28-32px)
+H3 Subheading
+1.25rem - 1.5rem (20-24px)
+Body Text
+1rem (16px)
+Small Text
+0.875rem (14px)
+Micro / Caption
+0.75rem (12px)
+IBM Plex
+H1 Display
+2.5rem - 3rem (40-48px)
+H2 Heading
+1.75rem - 2rem (28-32px)
+H3 Subheading
+1.25rem - 1.5rem (20-24px)
+Body Text
+1rem (16px)
+Small Text
+0.875rem (14px)
+Micro / Caption
+0.75rem (12px)
+Font Sizes
+H1 Display
+2.5rem - 3rem (40-48px)
+H2 Heading
+1.75rem - 2rem (28-32px)
+H3 Subheading
+1.25rem - 1.5rem (20-24px)
+Body Text
+1rem (16px)
+Small Text
+0.875rem (14px)
+Micro / Caption
+0.75rem (12px)
+Font Weights
+Light (300)
+Subtitles, secondary text
+Regular (400)
+Body text, paragraphs
+Medium (500)
+Emphasis, subheadings
+Semibold (600)
+Buttons, important text
+Bold (700)
+Headings, strong emphasis
+Letter Spacing
+Tight (-0.025em)
+For large headlines
+Normal (0em)
+For body text
+Wide (0.025em)
+For improved legibility
+Extra Wide (0.1em)
+For uppercase text
+Typography Prompt Builder
+Use this interactive tool to craft precise typography prompts. Adjust the sliders to create the perfect typography instructions:
+
+1. Select Typeface Family
+Sans-Serif
+Inter, Geist, Manrope, Plus Jakarta Sans
+
+Serif
+Merriweather, IBM Plex Serif, Libre Baskerville
+
+Monospace
+Geist Mono, IBM Plex Mono, JetBrains Mono
+
+2. Font Size Scale
+Headings
+
+40-60px
+Subheadings
+
+28-36px
+Body Text
+
+14-16px
+3. Font Weight Distribution
+Headings
+
+640
+Subheadings
+
+560
+Body Text
+
+460
+4. Letter Spacing
+Headings
+
+-0.06em
+Body Text
+
+0.00em
+ALL CAPS
+
+0.05em
+Generated Prompt
+Create a landing page using Inter font with the following typography scale:
+
+• Headings: 40-60px, font-weight: 640, letter-spacing: -0.06em
+• Subheadings: 28-36px, font-weight: 560, letter-spacing: 0.00em
+• Body text: 14-16px, font-weight: 460, line-height: 1.5
+• Button text: 14px, font-weight: 560
+• Ensure proper contrast and hierarchy between text elements
+
+Live Typography Preview
+Tag Example
+Main Heading Example
+Subheading Example
+This is an example of body text that would be used for the main content of your website or application. The font size, weight, and spacing are optimized for readability across different devices and screen sizes.
+Primary Button
+Animation Techniques
+Enhance your UI with these animation techniques that bring designs to life:
+
+Fade-in Effects
+Gradually reveal elements for a subtle, elegant entrance.
+
+Add a simple fade-in animation to the hero section that transitions from opacity 0 to 1 over 800ms with an ease-in-out timing function.
+
+Slide-in Animations
+Move elements into position from off-screen.
+
+Create a slide-in animation for the sidebar that enters from the left with a transform: translateX(-100%) to translateX(0) transition.
+
+Blur Effects
+Transition from blurred to clear for a dramatic reveal.
+
+Apply a blur-in effect to images where they start with filter: blur(10px) and transition to filter: blur(0) when they enter the viewport.
+
+Sequenced Animations
+Stagger animations across multiple elements.
+
+Create a staggered entrance for list items where each item appears 150ms after the previous one using incremental animation-delay values.
+
+Animation Examples
+Fade In
+Slide In
+Bounce
+Pulse
+Delayed Animation
+Blur Effect
+Rotate
+Sequence
+Note: Each demo uses CSS animations with different timing functions and properties to create unique effects.
+Animation Timing & Delays
+Fine-tune your animations with precise timing and delay controls:
+
+1
+Duration
+Set animation-duration for how long an animation takes to complete one cycle.
+
+animation-duration: 500ms; /* Half a second */
+
+2
+Delay
+Use animation-delay to postpone the start of an animation.
+
+animation-delay: 250ms; /* Quarter second delay */
+
+3
+Timing Function
+Control animation acceleration with animation-timing-function.
+
+animation-timing-function: ease-in-out; /* Smooth start and end */
+
+4
+Negative Delays
+Use negative animation-delay values to start an animation partway through its cycle.
+
+animation-delay: -2s; /* Starts 2 seconds into the animation */
+
+Animation Best Practices
+Keep animations subtle and purposeful. Use the prefers-reduced-motion media query to respect user preferences for reduced motion. Aim for animations under 500ms for UI interactions to maintain responsiveness.
+
+JavaScript Visualization Libraries
+Leverage powerful JavaScript libraries to create impressive visual effects with minimal custom code:
+
+Three.js
+Create 3D scenes, models, and animations directly in the browser.
+
+Create a landing page with a Three.js background featuring a slow-rotating 3D model of our product.
+
+COBE.js
+Lightweight library for creating interactive 3D globes.
+
+Add a COBE.js globe to our 'Global Presence' section that highlights our office locations with markers.
+
+Vanta.js
+Animated backgrounds with minimal configuration.
+
+Use Vanta.js BIRDS effect as a subtle animated background for our newsletter signup section.
+
+GSAP
+Professional-grade animation library for modern websites.
+
+Implement a staggered fade-in animation using GSAP for the features list as users scroll down the page.
+
+Learning Tailwind's Design System
+Understanding Tailwind's design systems will help you create more effective and consistent prompts:
+
+Color System
+Tailwind uses a numeric scale for color intensity, from 50 (lightest) to 900 (darkest).
+
+Create a button with a blue-600 background that changes to blue-700 on hover, with white text.
+
+Spacing System
+Tailwind uses a consistent spacing scale where 1 unit equals 0.25rem (4px by default).
+
+Add p-4 for padding, mt-6 for margin-top, and gap-2 between flex items.
+
+Typography Scale
+Tailwind's font sizes range from text-xs to text-9xl, with standardized line heights.
+
+Use text-xl font-medium for headings and text-sm text-gray-600 for descriptions.
+
+Responsive Design Patterns
+Learn Tailwind's breakpoint prefixes: sm, md, lg, xl, and 2xl.
+
+Create a grid with grid-cols-1 on mobile, md:grid-cols-2 on tablets, and lg:grid-cols-3 on desktop.
+
+Vanta JS Example
+
+Layout Examples
+These visual examples demonstrate common UI layout patterns you can request in your prompts:
+
+Bento Grid
+Design a bento grid layout with mixed sized cells using grid-column-span and grid-row-span. Make the featured item larger than others.
+
+Modal Dialog
+×
+Build a modal dialog with header, body, and footer. Include a close button and overlay backdrop with a fade-in animation.
+
+List Layout
+→
+→
+Create a list layout with avatar images, name, description, and chevron icons. Add subtle hover effects.
+
+Alerts
+×
+×
+Design alert components with success, error, warning, and info variants. Include an icon, message, and dismiss button.
+
+Sidebar Navigation
+Create a dashboard layout with fixed-width sidebar navigation, active state indicators, and a main content area.
+
+Advanced Grid Layout
+Create a responsive grid layout with various cell sizes using grid-template-areas for complex content organization.
+
+Action Bar / Toolbar
+Build an action bar with formatting controls, dividers, and primary action button for content editing interfaces.
+
+Top Navigation Bar
+Design a responsive navigation bar with logo, menu links, and user profile. Include dropdown menus and a mobile hamburger toggle.
+
+When requesting layouts, specify details like spacing, corner radius, shadows, and interactions. For responsive designs, mention how layouts should adapt across different screen sizes.
+
+Advanced Techniques
+Advanced prompting techniques for power users:
+
+Expert Prompting Strategies
+Chain your requests
+Start with a basic structure, then refine in subsequent prompts: "Now add form validation to the contact form with appropriate error messages."
+
+Provide example code snippets
+Share a code snippet you like and ask: "Create a product listing page following this component structure but styled with Tailwind CSS."
+
+Use persona-based prompting
+"Create HTML/CSS for a pricing section as if you were an experienced UI designer specializing in SaaS products."
+
+Request accessibility features
+"Create a form with WCAG 2.1 AA compliance, including proper aria labels, keyboard navigation, and focus states."

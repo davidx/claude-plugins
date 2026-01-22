@@ -1,5 +1,5 @@
 ---
-name: gen
+name: build
 description: Generate an Aura.build prompt with default style preferences
 ---
 
@@ -192,6 +192,28 @@ For Tailwind users: "Use Tailwind's container class with mx-auto and px-4 for pr
 - Button text: 14px, font-weight: 560
 - Ensure proper contrast and hierarchy between text elements"
 
+### Font Pairing Strategies
+
+**Serif + Sans-Serif** (Classic contrast):
+"Create a landing page using Playfair Display for headings and Inter for body text. Use a dramatic size contrast with headings at 64px and body text at 16px."
+
+**Sans-Serif + Sans-Serif** (Modern cohesive):
+"Design a website with Bricolage Grotesque (600 weight) for headings and Inter for body text. This creates a strong but cohesive visual hierarchy."
+
+**Weight Contrast** (Same family):
+"Use Inter Black (900) for headings and Inter Regular (400) for body text."
+
+**Serif Editorial**:
+"Generate a blog layout using Merriweather Bold for headings and IBM Plex Serif for body text, creating a scholarly, refined typography system."
+
+### Responsive Typography
+
+**Fluid Typography**:
+"Create a landing page with fluid typography that scales between mobile and desktop: Headings clamp(32px, 5vw, 64px), Subheadings clamp(24px, 3vw, 36px), Body clamp(16px, 1vw, 18px)."
+
+**Breakpoint-Based**:
+"Create typography that changes at breakpoints: Headings 48px on desktop, 36px on tablet, 24px on mobile. Body text 18px on desktop, 16px on tablet, 14px on mobile."
+
 ---
 
 ## Animation Techniques
@@ -216,6 +238,56 @@ For Tailwind users: "Use Tailwind's container class with mx-auto and px-4 for pr
 
 ### Best Practices
 Keep animations subtle and purposeful. Use the prefers-reduced-motion media query to respect user preferences for reduced motion. Aim for animations under 500ms for UI interactions to maintain responsiveness.
+
+### Text Animations
+
+**Character Reveal**: "Create a typing animation that reveals each character with a 50ms delay between characters for the main headline."
+
+**Word Fade Up**: "Create a staggered fade-up animation for each word in the tagline, with 100ms delay between each word, moving from 10px below to their final position."
+
+**Gradient Text**: "Apply a moving gradient background from blue to purple to the main heading, with the gradient animating horizontally over 3 seconds in a loop."
+
+**Clipped Slide In**: "Create a text animation that slides in with a clipping mask effect that reveals the text from left to right over 800ms with an ease-out timing function."
+
+### Card Animations
+
+**Hover Scale**: "Add a hover effect to product cards that scales them to 1.05x their size and adds a subtle shadow with a smooth 300ms transition."
+
+**Tilt Effect**: "Create a 3D tilt effect for feature cards that responds to cursor position, with a maximum rotation of 10 degrees and a subtle shadow that shifts with the tilt angle."
+
+**Staggered Entrance**: "Implement a staggered entrance animation for testimonial cards where each card fades in and moves up with a 100ms delay between each card."
+
+**Flip Card**: "Create flip cards that rotate 180 degrees on hover to reveal additional information on the back side, with a smooth 3D rotation effect."
+
+### Button Animations
+
+**Scale & Color**: "Create a button that scales to 1.05x size and shifts from blue-500 to blue-600 on hover with a 250ms transition."
+
+**Ripple Effect**: "Add a Material Design-inspired ripple effect that expands from the click point outward with a subtle fade-out animation."
+
+**Border Animation**: "Create a button with an animated border that appears to draw around the button's perimeter on hover, taking 1 second to complete."
+
+**Icon Slide**: "Create a button where the text slides left and an arrow icon appears from the right on hover, with a smooth 300ms transition."
+
+**Pulse Effect**: "Add a pulsing glow effect to the CTA button that expands and fades out repeatedly to draw attention to important actions."
+
+**Loading State**: "Create a button that shows a loading spinner when clicked, with text fading out and spinner fading in during the loading state."
+
+### Alert Animations
+
+**Slide Down**: "Create a success alert that slides down from the top of the page, remains visible for 5 seconds, then slides back up and out of view."
+
+**Fade & Shake**: "Create an error alert that fades in and shakes horizontally three times to draw attention to critical errors."
+
+**Toast Notification**: "Create a toast notification that slides in from the right edge, shows a progress bar indicating time until auto-dismiss, then slides out."
+
+**Stacked Alerts**: "Create a system for stacked notifications where new alerts appear at the bottom and push existing alerts upward."
+
+### Animation Duration Guidelines
+- Ultra-fast (100ms): Micro-interactions
+- Fast (200-300ms): Hover effects, buttons
+- Medium (400-600ms): Modals, alerts
+- Slow (700ms-1s): Page transitions
 
 ---
 
@@ -267,16 +339,61 @@ Example: "Create a grid with grid-cols-1 on mobile, md:grid-cols-2 on tablets, a
 
 ---
 
+## Responsive Layout Patterns
+
+### Column Drop
+Multi-column layout stacks vertically as screen width decreases.
+"Create a three-column layout that becomes a single column on mobile, stacking the sections in order of importance."
+
+### Layout Shifter
+Elements reposition, not just stack, as screen size changes.
+"Design a product showcase where the gallery is on the left on desktop, but moves above the product information on mobile for better visual flow."
+
+### Off Canvas
+Secondary content is placed off-screen and shown when needed.
+"Create a mobile layout with a hamburger menu that reveals a slide-out navigation drawer from the left side when clicked."
+
+### Mostly Fluid
+Grid-based layout that reflows and eventually stacks on smaller screens.
+"Create a fluid grid layout with 4 items per row on large screens, 2 per row on tablets, and 1 per row on mobile."
+
+---
+
 ## Layout Examples
 
 ### Bento Grid
 "Design a bento grid layout with mixed sized cells using grid-column-span and grid-row-span. Make the featured item larger than others."
 
-### Modal Dialog
-"Build a modal dialog with header, body, and footer. Include a close button and overlay backdrop with a fade-in animation."
+### Dashboard Bento
+"Create a metrics dashboard with a bento layout: small KPI cards in the top row (1x1 each), a large chart in the middle (2x2), bar charts on the bottom left (2x1), and a scrollable activity feed on the bottom right (2x1)."
 
-### List Layout
-"Create a list layout with avatar images, name, description, and chevron icons. Add subtle hover effects."
+### Portfolio Bento
+"Create a personal portfolio homepage with a bento box layout: a featured project spanning 2x2 grid cells, an about me section (1x1) with circular profile photo, skills section (1x2), and three smaller project cards (1x1 each)."
+
+### Media Gallery Bento
+"Design a media gallery with a main large image (3x2), a wide image on the top right (3x1), and two smaller images below (2x1 and 1x1). Include hover effects that display image titles."
+
+### Modal Dialog
+"Build a modal dialog with header, body, and footer. Include a close button and overlay backdrop with a fade-in animation. Make it responsive with full-width display on small screens."
+
+### List Layouts
+
+**Basic List**: "Create a list of user profiles with circular avatar images on the left, name and role information in the middle, and a chevron icon button on the right for navigation."
+
+**Contact List**: "Create a contacts list with user avatars, names, job titles, and action buttons (call, message) aligned to the right. Use subtle hover effects."
+
+**Settings List**: "Design a settings menu with left-aligned icons, setting names, and toggle switches on the right. Include clear section dividers."
+
+**Notification List**: "Create a notification feed with color-coded categories (red for alerts, blue for information, green for success), notification content, and relative timestamps. Include unread indicators."
+
+**Product List**: "Design a product list with product images, names, prices, brief descriptions, and add-to-cart buttons. Include stock indicators and rating stars."
+
+### List Layout Best Practices
+- Maintain consistent spacing between list items
+- Use clear visual hierarchies for primary/secondary information
+- Consider dividers or alternating backgrounds for long lists
+- Ensure touch targets are at least 44px tall on mobile
+- Include clear feedback states (active, hover, focus)
 
 ### Alerts
 "Design alert components with success, error, warning, and info variants. Include an icon, message, and dismiss button."

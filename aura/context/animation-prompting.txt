@@ -1,0 +1,340 @@
+Prompt for Animation
+Learn how to craft effective prompts for animations and bring your interfaces to life with smooth, purposeful motion.
+
+Well-crafted animation prompts can significantly improve user experience by guiding attention, providing feedback, and adding character to your interfaces.
+
+Introduction to Animation
+Effective animations provide context, guidance, and feedback to users, making interfaces more intuitive and engaging. When crafting prompts for animations, consider:
+
+1
+Purpose of the animation
+Is it to draw attention, show state change, provide feedback, or guide users through a process?
+
+2
+Animation properties
+Duration, timing function, delay, and intensity all affect the feel of the animation.
+
+3
+Trigger events
+What causes the animation to start? Page load, user interaction, scroll position, or state changes?
+
+4
+User experience considerations
+Respect user preferences with reduced motion options, and ensure animations enhance rather than distract.
+
+Animated hero section made in Aura
+
+Text Animation
+Text animations can make your content more engaging and highlight important information. Here are various text animation techniques:
+
+Character Reveal
+Character Reveal
+Reveal text character by character, creating a typing effect. Perfect for headers and introductions.
+
+Create a typing animation that reveals each character with a 50ms delay between characters for the main headline.
+
+Word Fade Up
+Word
+Fade
+Up
+Animation
+Animate words fading in and moving upward with staggered timing, creating a smooth flowing effect.
+
+Create a staggered fade-up animation for each word in the tagline, with 100ms delay between each word, moving from 10px below to their final position.
+
+Letter by Letter
+LetterbyLetter
+Each letter appears one by one with a scaling effect, creating a dynamic and playful animation.
+
+Create a letter-by-letter animation that reveals each character with a subtle scale effect and 80ms staggered delay.
+
+Combined Animation
+CombinedAnimation
+Combines fade, slide, and blur effects letter by letter for a sophisticated entrance animation.
+
+Create a complex animation that fades in, slides up, and reduces blur for each letter with a 60ms staggered delay between characters.
+
+Gradient Text
+Gradient Animation
+Apply animated gradient backgrounds to text for an eye-catching effect that draws attention.
+
+Apply a moving gradient background from blue to purple to the main heading, with the gradient animating horizontally over 3 seconds in a loop.
+
+Blur Transition
+Blur Transition
+Transition between text blur states for subtle motion effects or to indicate loading/processing.
+
+Create a text transition that blurs from 0 to 5px and back when switching between content states, with a 400ms transition duration.
+
+Clipped Slide In
+Clipped Slide
+Text gradually reveals through a clipping mask while sliding into position, creating a dynamic reveal effect.
+
+Create a text animation that slides in with a clipping mask effect that reveals the text from left to right over 800ms with an ease-out timing function.
+
+3D Transform
+3D Transform
+Text rotates and transforms in 3D space, creating an immersive depth effect that catches attention.
+
+Apply a 3D transformation to heading text that rotates around the Y-axis with proper perspective, creating a realistic 3D flip effect with 700ms duration.
+
+Pro Tip: Text Animation Considerations
+Keep text animations subtle and brief to avoid distracting users from your content. Ensure animated text remains readable throughout the animation. For longer texts, animate only headings or key phrases rather than entire paragraphs.
+
+Card Animation
+Card animations add depth and interactivity to your UI, helping users understand interactions and hierarchy. Here are common card animation patterns:
+
+Hover Scale Effect
+Hover over this card
+
+A subtle scale effect on hover creates a sense of elevation and interactivity.
+
+Add a hover effect to product cards that scales them to 1.05x their size and adds a subtle shadow with a smooth 300ms transition.
+
+Tilt Effect
+Move cursor over card
+
+A 3D tilt effect that follows the cursor creates an immersive, interactive feel.
+
+Create a 3D tilt effect for feature cards that responds to cursor position, with a maximum rotation of 10 degrees and a subtle shadow that shifts with the tilt angle.
+
+Staggered Entrance
+Cards that enter the view in sequence create a dynamic, orchestrated feel.
+
+Implement a staggered entrance animation for testimonial cards where each card fades in and moves up with a 100ms delay between each card.
+
+Flip Card
+Hover to flip
+
+Back side content
+
+Flip cards reveal additional information or functionality with a 3D rotation effect.
+
+Create flip cards that rotate 180 degrees on hover to reveal additional information on the back side, with a smooth 3D rotation effect.
+
+Card Animation Best Practices
+Keep animations subtle and brief (under 300ms) for hover effects. Ensure accessibility by not relying solely on hover for critical actions. Use hardware-accelerated properties like transform and opacity for smoother animations.
+
+Button Animation
+Interactive button animations provide critical feedback to users and enhance the feeling of responsiveness. Here are various button animation techniques:
+
+Scale & Color
+Hover Me
+Combines subtle scale change with color shift for clear feedback.
+
+Create a button that scales to 1.05x size and shifts from blue-500 to blue-600 on hover with a 250ms transition.
+
+Ripple Effect
+Click Me
+Creates a ripple effect that radiates from the click point.
+
+Add a Material Design-inspired ripple effect that expands from the click point outward with a subtle fade-out animation.
+
+Border Animation
+Hover Me
+Animated border that moves around the button perimeter.
+
+Create a button with an animated border that appears to draw around the button's perimeter on hover, taking 1 second to complete the animation.
+
+Icon Slide
+
+Submit
+→
+Text and icon slide into new positions on hover.
+
+Create a button where the text slides left and an arrow icon appears from the right on hover, with a smooth 300ms transition.
+
+Pulse Effect
+Action Required
+Pulsing glow effect that draws attention to important actions.
+
+Add a pulsing glow effect to the CTA button that expands and fades out repeatedly to draw attention to important actions.
+
+Loading State
+Submit
+Transitions from text to spinner to indicate processing.
+
+Create a button that shows a loading spinner when clicked, with text fading out and spinner fading in during the loading state.
+
+Button Animation Best Practices
+Keep animations quick (under 300ms) to maintain perceived performance. Provide immediate visual feedback on click/tap. Ensure animations don't delay the actual functionality or form submission. For loading states, keep users informed about progress to reduce perceived wait time.
+
+Intro animation made in Aura
+
+Alert Animation
+Alert animations help draw attention to important messages and provide feedback to users. Effective alert animations are noticeable without being disruptive:
+
+Slide Down Alert
+Show Alert
+Alert slides down from the top of the container and automatically dismisses.
+
+Create a success alert that slides down from the top of the page, remains visible for 5 seconds, then slides back up and out of view.
+
+Fade & Shake Alert
+Show Alert
+Alert fades in with a shake animation to draw attention to critical errors.
+
+Create an error alert that fades in and shakes horizontally three times to draw attention to critical errors or warnings.
+
+Toast Notification
+Show Toast
+Toast notification slides in from the right with an auto-dismiss progress indicator.
+
+Create a toast notification that slides in from the right edge, shows a progress bar indicating how long until it auto-dismisses, then slides out to the right.
+
+Stacked Alerts
+Add Alert
+Multiple alerts stack visually, with newest alerts pushing older ones upward.
+
+Create a system for stacked notifications where new alerts appear at the bottom and push existing alerts upward, with animations for both entrance and exit.
+
+Alert Animation Best Practices
+Match animation style to the alert's importance (subtle for information, more noticeable for warnings/errors). Use auto-dismiss for non-critical alerts, but keep error messages visible until acknowledged. Provide a visual or accessible indicator of the remaining time for auto-dismissing alerts. Ensure alerts are accessible to screen readers by using appropriate ARIA roles and attributes.
+
+Animation Timing
+Timing functions and duration choices can dramatically affect how animations feel. The right timing creates natural, pleasing motion that enhances user experience:
+
+Easing Functions
+Linear
+Ease
+Ease-in-out
+Bounce
+Different easing functions create different feelings of movement and impact how natural animations feel.
+
+Apply an ease-in-out timing function to create smooth, natural movement for UI elements that slide into view, with acceleration at the start and deceleration at the end.
+
+Duration Guidelines
+Ultra-fast (100ms)
+Micro-interactions
+Fast (200-300ms)
+Hover effects, buttons
+Medium (400-600ms)
+Modals, alerts
+Slow (700ms-1s)
+Page transitions
+Different animation types need different durations. Faster animations feel responsive, while slower ones provide emphasis.
+
+Use short durations (150-250ms) for button hover effects to maintain responsiveness, and longer durations (400-500ms) for entrance animations to create emphasis.
+
+Animation Timing Best Practices
+Match the timing function to the animation's purpose. Use shorter durations for small elements and micro-interactions. Consider user expectation - important actions should feel responsive, not delayed. Test animations on both fast and slow devices to ensure performance. For complex animations, use easing functions that feel natural rather than mechanical.
+
+Animated card made in Aura
+
+Animation Examples
+Visual examples of common animation patterns you can implement with CSS:
+
+Basic Animation Patterns
+Fade In
+Slide In
+Bounce
+Pulse
+Delayed Animation
+Blur Effect
+Rotate
+Sequence
+Note: These examples demonstrate common animation patterns using CSS keyframes with different timing functions.
+Animation Performance Tips
+For optimal performance, animate only transform and opacity properties when possible. These properties can be hardware-accelerated and don't trigger layout recalculations. Avoid animating properties like width, height, or margin that cause layout reflows.
+
+Animation Prompt Builder
+Build effective animation prompts by customizing key parameters below. This tool helps you generate clear, detailed instructions for creating animations.
+
+Animation Type
+Fade
+Slide
+Scale
+Rotate
+Blur
+Duration: 800ms
+
+Fast
+Medium
+Slow
+Delay: 0ms
+
+None
+Medium
+Long
+Easing Function
+Linear
+Ease
+Ease In
+Ease Out
+Ease In-Out
+Bounce
+Iterations
+1
+Once
+2
+Twice
+3
+Thrice
+∞
+Infinite
+Direction
+Normal
+Reverse
+Alternate
+Alt-Rev
+Intensity: 0 to 1
+
+Subtle
+Medium
+Strong
+Live Preview
+Preview Element
+
+ Replay Animation
+Generated Prompt
+Copy Prompt
+Create a fade in animation for all elements on the page that transitions from opacity 0 to 1 over 800ms with ease-in-out timing function and a 0ms delay
+Prompt Builder Tips
+Be specific about what elements should animate. Combine animation types for more complex effects. Consider the context and purpose of the animation when selecting parameters. Adjust the settings to match the desired attention level and impact.
+
+Example Animation Prompts
+Use these example prompts as starting points for your own animation requests. These examples cover various common animation scenarios:
+
+Hero Section Entrance
+Create a staggered entrance animation for the hero section where the heading fades in and slides up from 20px below, followed by the subheading 200ms later, and finally the CTA button 300ms after that. Use an ease-out timing function with a 600ms duration.
+
+fade in
+slide up
+staggered
+ease-out
+Page Transition
+Create a smooth page transition effect where the current page fades out while sliding slightly to the left (transform: translateX(-20px)), and the new page fades in while sliding from the right (transform: translateX(20px) to 0). Use a 350ms duration with ease-in-out timing.
+
+fade
+slide
+page transition
+Interactive Button Animation
+Add a multi-state animation to call-to-action buttons where on hover, the button scales to 1.03x with a subtle shadow increase (box-shadow: 0 4px 12px rgba(0,0,0,0.1)), and on click, it scales down to 0.98x momentarily before returning to hover state. Use a quick 150ms duration for click and 200ms for hover with ease timing.
+
+scale
+hover
+click
+multi-state
+Loading Animation
+Create a loading animation using three dots that fade and scale in sequence. Each dot should scale from 0.5 to 1.2 and back while fading from 0.2 to 1 opacity, with a 200ms delay between each dot. The animation should loop infinitely to indicate ongoing loading.
+
+loading
+scale
+fade
+infinite
+Card Hover Effects
+Add hover animations to feature cards where the card subtly elevates (transform: translateY(-5px)) with an increased shadow, while the icon within the card scales up to 1.1x and changes color. The card background should also have a subtle gradient shift effect. Implement with a 300ms transition using ease-out timing.
+
+hover
+multi-property
+translate
+gradient
+Scroll-Triggered Animations
+Implement scroll-triggered animations for content sections where elements slide in from different directions as they enter the viewport. Left side content should slide in from left (-30px), right side content from right (30px), and center content should fade in while moving up from 20px below. Use Intersection Observer with a 0.1 threshold and 600ms animation duration.
+
+scroll
+slide
+fade
+directional
+Customizing Example Prompts
+Use these examples as templates, adapting the specific values, timing, and properties to match your project needs. Combine elements from different examples to create complex animation systems. Always consider performance impact and accessibility when implementing animations.

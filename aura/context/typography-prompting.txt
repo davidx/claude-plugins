@@ -1,0 +1,491 @@
+Prompting for Typography
+Master the art of typography in your designs with effective prompting techniques and font pairing strategies.
+
+Typography is the foundation of good design. This guide will help you craft effective prompts for typography, choose the right fonts, and create balanced type systems for your projects.
+
+Introduction to Typography Prompting
+Typography plays a crucial role in design, influencing readability, hierarchy, and overall aesthetic. Properly crafted typography prompts help AI tools generate designs with a professional typographic foundation.
+
+Elements of Good Typography
+Hierarchy
+Clear visual distinction between headings, subheadings, and body text that guides the reader's eye.
+
+Readability
+Appropriate font choices, sizes, and spacing that make content easy to read across different devices.
+
+Consistency
+A systematic approach to type that creates harmony throughout the design.
+
+Why Typography Prompts Matter
+Specifying typography details in your prompts helps AI tools create designs with intentional type choices rather than default options. This leads to more professional-looking designs with better readability and visual hierarchy.
+
+Animated hero section made in Aura
+
+Font Fundamentals
+Understanding font classifications and terminology will help you create more effective typography prompts.
+
+Sans-Serif Fonts
+Clean, modern fonts without decorative strokes at the end of characters. Ideal for interfaces, headings, and body text in digital designs.
+
+Inter
+
+AaBbCcDdEeFfGgHhIiJjKkLl 0123456789
+
+Geist
+
+AaBbCcDdEeFfGgHhIiJjKkLl 0123456789
+
+Serif Fonts
+Classic fonts with small decorative strokes at the ends of characters. Often used for body text in print and for creating traditional, sophisticated looks.
+
+Merriweather
+
+AaBbCcDdEeFfGgHhIiJjKkLl 0123456789
+
+Plex Serif
+
+AaBbCcDdEeFfGgHhIiJjKkLl 0123456789
+
+Display Fonts
+Decorative fonts designed for large headings and titles, not suitable for body text. Use sparingly for maximum impact.
+
+Playfair Display
+
+AaBbCcDdEeFfGgHhIiJjKkLl 0123456789
+
+Monospace Fonts
+Fonts where each character takes up the same amount of horizontal space. Ideal for code snippets, technical content, and creating typewriter-like aesthetics.
+
+Geist Sans
+
+AaBbCcDdEeFfGgHhIiJjKkLl 0123456789
+
+Condensed Fonts
+Narrower versions of standard typefaces with characters that take up less horizontal space. Ideal for space-constrained layouts, headlines, and data-dense interfaces.
+
+IBM Plex Condensed
+
+AaBbCcDdEeFfGgHhIiJjKkLl 0123456789
+
+Expanded Fonts
+Wider versions of standard typefaces with characters that take up more horizontal space. Great for creating impact in headlines and providing an open, airy feel.
+
+Encode Sans Expanded
+
+AaBbCcDdEeFfGgHhIiJjKkLl 0123456789
+
+Typography Terminology
+Font Weight
+The thickness of the characters, usually ranging from 100 (thin) to 900 (black).
+
+Font Size
+The size of the characters, typically measured in pixels (px), points (pt), or relative units like rem.
+
+Line Height
+The space between lines of text, affects readability especially for longer text blocks.
+
+Letter Spacing
+The space between characters, can be adjusted for aesthetic purposes or to improve readability.
+
+Typography Pairing
+Creating effective font pairings is an art that can elevate your designs. Learn how to specify complementary fonts in your prompts.
+
+Font Pairing Principles
+The most effective font combinations create visual contrast while sharing some subtle quality that connects them. Typically, pair a distinctive headline font with a more neutral body font.
+
+Classic Font Pairings
+Serif + Sans-Serif
+Playfair Display
+Paired with Inter for a classic contrast that pairs the elegance of a serif display font with the clean readability of a modern sans-serif.
+Create a landing page using Playfair Display for headings and Inter for body text. Use a dramatic size contrast with headings at 64px and body text at 16px.
+
+Sans-Serif + Sans-Serif
+Bricolage Grotesque
+Paired with Inter for a modern, cohesive look that maintains readability while using contrast in weights rather than font types.
+Design a website with Bricolage Grotesque (600 weight) for headings and Inter for body text. This creates a strong but cohesive visual hierarchy.
+
+Serif + Serif
+Merriweather
+Paired with IBM Plex Serif for a sophisticated, editorial look that's perfect for longform content.
+Generate a blog layout using Merriweather Bold for headings and IBM Plex Serif for body text, creating a scholarly, refined typography system.
+
+Pairing Strategies for Prompts
+1
+Contrast in Classification
+Pair fonts from different categories (serif + sans-serif, display + sans-serif).
+
+Use Playfair Display for headings and Inter for body text
+
+2
+Contrast in Weight
+When using fonts from the same family, create contrast with dramatic weight differences.
+
+Use Inter Black (900) for headings and Inter Regular (400) for body text
+
+3
+Contrast in Size
+Create visual interest with significant size differences between headings and body text.
+
+Set headings to 3rem (48px) and body text to 1rem (16px)
+
+4
+Historical or Stylistic Connections
+Pair fonts that share a historical period or design aesthetic.
+
+Create a mid-century modern design using Futura for headings and Gill Sans for body text
+
+Animated hero section made in Aura
+
+Font Showcase
+A selection of modern fonts you can reference in your prompts, with examples of their appearance and ideal use cases.
+
+Sans-Serif Fonts
+Inter
+Popular
+Inter Sans
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+A versatile, highly legible sans-serif designed for screens.
+
+300
+400
+500
+600
+700
+Bricolage Grotesque
+Trending
+Bricolage Grotesque
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+A contemporary grotesque with quirky details and excellent readability.
+
+300
+400
+500
+600
+700
+Geist Sans
+Geist Sans
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Modern sans-serif by Vercel with compact spacing and softly bent arcs.
+
+300
+400
+500
+600
+700
+Plus Jakarta Sans
+Plus Jakarta Sans
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Friendly sans-serif designed for digital interfaces with excellent legibility.
+
+300
+400
+600
+700
+Serif Fonts
+Merriweather
+Merriweather
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+A traditional serif with excellent readability for longform content.
+
+300
+400
+700
+900
+IBM Plex Serif
+IBM Plex Serif
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+A contemporary serif with excellent legibility and a technical, precise character.
+
+300
+400
+500
+600
+700
+Playfair Display
+Playfair Display
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+An elegant display serif with dramatic thick-thin transitions, ideal for headlines.
+
+400
+500
+600
+700
+900
+Monospace Fonts
+Geist Mono
+Geist Mono
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Clean monospaced companion to Geist Sans, ideal for code blocks and technical content.
+
+300
+400
+500
+600
+700
+IBM Plex Mono
+IBM Plex Mono
+
+AaBbCcDdEeFfGgHhIiJjKkLl
+
+Technical-looking monospace font with excellent readability for code and technical documentation.
+
+300
+400
+500
+600
+700
+How to Reference Fonts in Prompts
+Be specific about font names
+Use the exact font name instead of generic descriptions. "Use Playfair Display" is better than "use an elegant serif."
+
+Specify weights and styles
+Include weight numbers (400, 700) or names (Regular, Bold) and styles (italic) when relevant.
+
+Include fallback options
+Mention similar alternatives. "Use Inter or a similar modern sans-serif" provides flexibility.
+
+Reference font sources
+Mention "Google Fonts" or other sources to clarify where the font is available.
+
+Typography Prompt Builder
+Create precise typography specifications for your prompts with this interactive builder. Select options below to generate a detailed typography prompt that you can use in your designs.
+
+1. Select Typeface Family
+Sans Serif
+Serif
+Monospace
+Display
+Grotesque
+2. Font Size Scale
+Heading Size
+A
+20-32px
+A
+32-40px
+A
+48-64px
+Subheading Size
+A
+16-20px
+A
+20-28px
+A
+32-40px
+Body Text Size
+A
+12-14px
+A
+14-16px
+A
+16-18px
+3. Font Weight
+Heading Weight
+A
+400
+A
+500
+A
+600
+A
+700
+Subheading Weight
+A
+300
+A
+400
+A
+500
+A
+600
+Body Text Weight
+A
+300
+A
+400
+A
+500
+A
+600
+4. Letter Spacing
+Heading Spacing
+Typ
+-0.05em
+Typ
+-0.02em
+Typ
+0em
+Typ
+0.02em
+Body Text Spacing
+Typ
+-0.02em
+Typ
+0em
+Typ
+0.01em
+Typ
+0.02em
+ALL CAPS Spacing
+TYP
+0.02em
+TYP
+0.05em
+TYP
+0.1em
+TYP
+0.15em
+Visual Preview
+Live Typography Preview
+Tag Example
+Main Heading Example
+Subheading Example
+This is an example of body text that would be used for the main content of your website or application. The font size, weight, and spacing are optimized for readability across different devices and screen sizes.
+Primary Button
+Generated Prompt
+
+Copy Prompt
+Create a landing page using Inter font with the following typography scale:
+
+• Headings: 60-80px, font-weight: 600, letter-spacing: -0.02em
+• Subheadings: 20-28px, font-weight: 500, letter-spacing: 0.00em
+• Body text: 16-20px, font-weight: 400, line-height: 1.5
+• Button text: 16px, font-weight: 500
+• Ensure proper contrast and hierarchy between text elements
+Pro Tips for Typography Prompts
+For best results, include both specific font names and fallback categories. Specify exact weights rather than just saying "bold". Include letter-spacing for headings and ALL CAPS text. For body text, always specify line-height for better readability.
+
+Typography Examples
+Ready-to-use typography prompt examples for different design scenarios. Copy these prompts and adapt them to your specific needs.
+
+Modern Business Website
+Inter Bold for Headings
+Inter Regular for body text with good readability and clean modern feel.
+
+Inter SemiBold for buttons
+48px Heading
+24px Subheading
+16px Body Text
+12px Caption Text
+Create a business homepage using Inter with the following typography scale: • Headings: 48px, font-weight: 700, letter-spacing: -0.02em • Subheadings: 24px, font-weight: 600, letter-spacing: -0.01em • Body text: 16px, font-weight: 400, line-height: 1.5 • Button text: 16px, font-weight: 600 • Caption text: 12px, font-weight: 400, letter-spacing: 0.02em • Use a dark gray (#333) for text on white backgrounds for readability
+
+Editorial Blog
+Playfair Display
+Merriweather serif for body text with excellent readability for longform content.
+
+MERRIWEATHER BOLD CAPS
+56px Article Title
+32px Section Heading
+18px Body Text
+12px Category Label
+Design a blog layout with elegant typography: • Article titles: Playfair Display, 56px, font-weight: 700, line-height: 1.1 • Section headings: Playfair Display, 32px, font-weight: 600, line-height: 1.2 • Body text: Merriweather, 18px, font-weight: 400, line-height: 1.6 • Pull quotes: Playfair Display italic, 24px, line-height: 1.4 • Category labels: Merriweather Bold, 12px, ALL CAPS, letter-spacing: 0.05em • Use a max-width of 680px for text containers to improve readability
+
+Tech Startup / SaaS
+Bricolage Grotesque
+Inter for functional UI text with excellent readability on screens.
+
+CTA Button
+64px Hero Heading
+28px Feature Title
+16px UI Text
+14px Button Text
+Create a SaaS landing page with modern typography: • Hero heading: Bricolage Grotesque, 64px, font-weight: 700, letter-spacing: -0.03em • Feature titles: Bricolage Grotesque, 28px, font-weight: 600, letter-spacing: -0.01em • UI text: Inter, 16px, font-weight: 400, line-height: 1.5 • Button text: Inter, 14px, font-weight: 600, letter-spacing: 0.01em • Nav links: Inter, 14px, font-weight: 500 • Use vibrant blue (#3B82F6) for interactive elements with white text
+
+E-commerce Store
+Plus Jakarta Sans
+Clean sans-serif for product information and descriptions.
+
+$99.00
+Add to Cart
+40px Page Title
+24px Product Name
+16px Product Description
+18px Price
+Design an e-commerce store with clean, accessible typography: • Page titles: Plus Jakarta Sans, 40px, font-weight: 800 • Product names: Plus Jakarta Sans, 24px, font-weight: 700, line-height: 1.2 • Product descriptions: Plus Jakarta Sans, 16px, font-weight: 400, line-height: 1.5 • Prices: Plus Jakarta Sans, 18px, font-weight: 700 • Button text: Plus Jakarta Sans, 14px, font-weight: 600 • Category labels: Plus Jakarta Sans, 12px, font-weight: 600, letter-spacing: 0.02em • Ensure strong color contrast for prices and CTAs for better accessibility
+
+Responsive Typography
+Learn how to create typography prompts that adapt beautifully across different screen sizes, from mobile to desktop.
+
+Why Responsive Typography Matters
+Typography that works well on a desktop might be unreadable on a mobile device. Responsive typography ensures optimal readability and visual hierarchy across all screen sizes, improving the user experience for everyone.
+
+Responsive Typography Strategies
+Fluid Typography
+Font sizes that scale smoothly between minimum and maximum sizes based on screen width.
+
+Small Screen
+Large Screen
+Responsive Heading
+Smoothly scales between devices
+
+Create a landing page with fluid typography that scales between mobile and desktop: • Headings: clamp(32px, 5vw, 64px) • Subheadings: clamp(24px, 3vw, 36px) • Body text: clamp(16px, 1vw, 18px)
+
+Breakpoint-Based Typography
+Font sizes that change at specific screen width breakpoints.
+
+Small Screen
+Large Screen
+Responsive Heading
+Smoothly scales between devices
+
+Create a landing page with breakpoint-based typography: • Headings: 48px on desktop, 36px on tablet, 24px on mobile • Subheadings: 36px on desktop, 28px on tablet, 18px on mobile • Body text: 18px on desktop, 16px on tablet, 14px on mobile • Button text: 16px on desktop, 14px on tablet, 12px on mobile
+
+Text Animation
+Text animations can make your typography more engaging and highlight important information. When combined with thoughtful font choices, animations can greatly enhance your design:
+
+Character Reveal
+Character Reveal
+Reveal text character by character, creating a typing effect. Perfect for headers and important typography elements.
+
+Create a typing animation that reveals each character with a 50ms delay between characters for the main headline using Inter.
+
+Word Fade Up
+Word
+Fade
+Up
+Animation
+Animate words fading in and moving upward with staggered timing, creating a smooth flowing effect for headlines and quotes.
+
+Create a staggered fade-up animation for each word in the tagline, with 100ms delay between words, using Inter font.
+
+Letter by Letter
+LetterbyLetter
+Each letter appears one by one with a scaling effect, creating a dynamic and playful animation for display fonts.
+
+Create a letter-by-letter animation that reveals each character with a subtle scale effect and 80ms staggered delay, using a bold display font.
+
+Combined Animation
+CombinedAnimation
+Combines fade, slide, and blur effects letter by letter for a sophisticated entrance animation, perfect for hero headings.
+
+Create a complex animation that fades in, slides up, and reduces blur for each letter with a 60ms staggered delay between characters using Inter at 60-80px.
+
+Gradient Text
+Gradient Animation
+Apply animated gradient backgrounds to text for an eye-catching effect that elevates your typography.
+
+Apply a moving gradient background from blue to purple to the main heading, with the gradient animating horizontally over 3 seconds in a loop.
+
+Clipped Reveal
+Clipped Reveal
+Text gradually reveals through a clipping mask while sliding into position, creating a dynamic reveal effect for bold fonts.
+
+Create a text animation that slides in with a clipping mask effect that reveals the title text from left to right over 800ms with an ease-out timing function.
+
+Text Animation Best Practices
+Keep text animations subtle and brief to avoid distracting from your content. Ensure animated text remains readable throughout the animation. For headings, choose animations that complement the font's character—elegant transitions for serif fonts, clean animations for sans-serif. Consider using animation to emphasize font weight changes or to transition between font styles. Respect user preferences by implementing reduced motion options.

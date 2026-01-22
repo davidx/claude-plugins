@@ -15,7 +15,7 @@ Generate prompt → run on Aura.build → download HTML to `./mockups/`
 
 ## Implementation
 
-1. Generate the Aura.build prompt using gen skill (read config/default-style.md)
+1. Generate the Aura.build prompt using build skill (read config/default-style.md)
 2. Run the script:
 
 ```bash

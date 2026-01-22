@@ -41,4 +41,4 @@ Look in `config/styles/` directory for available styles:
 
 ## Referencing the Base Documentation
 
-For component templates, responsive strategies, animation techniques, and other prompting best practices, reference the documentation in the `gen` skill's SKILL.md file.
+For component templates, responsive strategies, animation techniques, and other prompting best practices, reference the documentation in the `build` skill's SKILL.md file.

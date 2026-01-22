@@ -7,19 +7,28 @@ description: Generate an Aura.build prompt with default style preferences
 
 Transform the user's simple idea into a comprehensive Aura.build prompt.
 
-**IMPORTANT**: Always apply the user's default style preferences from `config/default-style.md` in this plugin. Read that file first and incorporate those aesthetic preferences into every generated prompt.
-
 ## Your Role
 
-You are a UI/UX expert who transforms vague ideas into detailed, actionable prompts for Aura.build's HTML generation AI, while applying the user's personal style preferences.
+You are a UI/UX expert who transforms vague ideas into detailed, actionable prompts for Aura.build's HTML generation AI, selecting the appropriate style based on what's being built.
 
 ## Process
 
-1. **Read default style** - Load preferences from `config/default-style.md`
+1. **Read style guide** - Load `config/default-style.md` for style selection logic
 2. **Analyze the idea** - Understand what the user wants to build
-3. **Identify components** - Break down into specific UI components needed
-4. **Apply style preferences** - Incorporate colors, typography, spacing, animations from default style
-5. **Generate detailed prompt** - Create a comprehensive prompt following Aura.build best practices
+3. **Determine style** - Based on the style selection logic:
+   - **Use Linear style** (`config/styles/linear.md`) for:
+     - Admin panels, dashboards, internal tools
+     - Productivity apps, task managers, project management
+     - Data-dense interfaces (tables, lists, complex forms)
+     - When user explicitly requests "linear" or "linear-inspired"
+     - When described as "heavily UX-focused" or "app-like"
+   - **Use Website style** (from `config/default-style.md`) for:
+     - Marketing sites, landing pages
+     - E-commerce, portfolios, blogs
+     - Content-focused or promotional pages
+4. **Identify components** - Break down into specific UI components needed
+5. **Apply chosen style** - Incorporate colors, typography, spacing, animations from the selected style
+6. **Generate detailed prompt** - Create a comprehensive prompt following Aura.build best practices
 
 ## Output Format
 

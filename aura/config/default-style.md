@@ -1,52 +1,66 @@
 # Default Style Profile
 
-Apply these preferences to ALL generated Aura prompts:
+Apply these preferences to generated Aura prompts based on context.
 
-## Aesthetic: Linear-inspired with Rich Details
+## Style Selection Logic
+
+**Use Linear-inspired style (config/styles/linear.md) when:**
+- User explicitly mentions "linear", "linear-inspired", or "linear style"
+- Building admin panels, dashboards, or internal tools
+- Building productivity apps, task managers, or project management tools
+- User describes it as "heavily UX-focused" or "app-like"
+- Building data-dense interfaces with tables, lists, or forms
+
+**Use Website style (below) for everything else:**
+- Marketing sites, landing pages
+- E-commerce, portfolios, blogs
+- Content-focused pages
+- Promotional or showcase sites
+
+---
+
+## Website Style (Default)
 
 ### Visual Language
-- Clean, minimal interface with purposeful negative space
-- Subtle depth through layered shadows (not flat, not skeuomorphic)
-- Refined micro-interactions that feel responsive and alive
-- Muted, sophisticated color palette with strategic accent colors
+- Inviting and approachable design
+- Clear visual hierarchy that guides the eye
+- Balance of whitespace and content
+- Personality through color and typography choices
 
 ### Colors
-- Background: Off-white or very light gray (#FAFAFA, #F5F5F5) for light mode
-- Cards/Surfaces: Pure white with subtle shadow (shadow-sm or custom 0 1px 3px rgba(0,0,0,0.08))
-- Primary: Deep violet/indigo (#5E5ADB, #6366F1) or sophisticated blue (#3B82F6)
-- Text: Near-black (#171717) for headings, muted gray (#525252) for body
-- Borders: Very subtle (#E5E5E5) or none, rely on shadows instead
-- Accents: Purposeful pops of color for status/actions
+- Background: White (#FFFFFF) or soft off-white (#FAFAFA)
+- Primary: Bold, brand-appropriate color (suggest based on context)
+- Text: Dark gray (#1F2937) for headings, medium gray (#4B5563) for body
+- Accents: Complementary colors for CTAs and highlights
+- Allow for more expressive color use than Linear style
 
 ### Typography
-- Font: Inter (primary) or Geist
-- Headings: font-medium (500), tracking-tight (-0.025em), not bold
-- Body: Regular weight, generous line-height (1.6-1.7)
-- Size scale: Restrained, not too large. Base 14-15px.
-- Letter-spacing: Slightly tight for headings, normal for body
+- Font: Inter, Plus Jakarta Sans, or contextually appropriate
+- Headings: Semibold (600) or Bold (700), larger sizes for impact
+- Body: Regular weight, comfortable line-height (1.6-1.75)
+- Size scale: More generous. Base 16px, headings can be large and expressive
+- Allow for personality in font choices
 
 ### Spacing & Layout
-- Generous padding (p-5, p-6) inside cards/containers
-- Consistent gaps (gap-4, gap-6) between elements
-- Content max-width containers for readability
-- Asymmetric layouts welcome when purposeful
+- Generous sections with breathing room
+- Hero sections with impact
+- Standard responsive breakpoints
+- Content width appropriate for readability
 
 ### Components
-- Buttons: Subtle rounded corners (rounded-md, not full), solid fills for primary, ghost/outline for secondary
-- Cards: Minimal borders, soft shadows, rounded-lg corners
-- Inputs: Clean borders, generous padding, clear focus states with ring
-- Icons: Lucide or similar, stroke-width 1.5-2, sized appropriately (16-20px)
+- Buttons: Contextually appropriate rounding, clear hover states
+- Cards: Clean with appropriate shadows or borders
+- Images: Hero images, illustrations welcome
+- Icons: Contextually appropriate style
 
 ### Interactions & Animation
-- Transitions: 150-200ms, ease-out timing
-- Hover states: Subtle background shifts, not dramatic color changes
-- Focus: Visible ring (ring-2 ring-offset-2 ring-primary)
-- Loading: Skeleton screens over spinners when possible
-- Micro-animations: Scale on click (active:scale-[0.98]), subtle transforms
+- Smooth transitions (200-300ms)
+- Engaging hover effects
+- Scroll-triggered animations where appropriate
+- Entry animations for key sections
 
 ### Principles
-- Clarity over decoration
-- Every element earns its place
-- Quiet confidence, not flashy
-- Professional but not sterile
-- Details matter but don't overwhelm
+- Communicate clearly
+- Engage and convert visitors
+- Show personality and brand
+- Balance aesthetics with usability

@@ -6,7 +6,7 @@ A collection of plugins for Claude Code.
 
 Add this marketplace to Claude Code:
 ```bash
-claude plugin marketplace add https://github.com/yourusername/claude-plugins
+claude plugin marketplace add https://github.com/davidx/claude-plugins
 ```
 
 Then install individual plugins:

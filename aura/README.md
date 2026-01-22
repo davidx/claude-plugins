@@ -6,7 +6,7 @@ Generate detailed Aura.build prompts from simple idea descriptions.
 
 Add the plugin marketplace and install:
 ```bash
-claude plugin marketplace add https://github.com/yourusername/claude-plugins
+claude plugin marketplace add https://github.com/davidx/claude-plugins
 claude plugin install aura
 ```
 

@@ -1,6 +1,6 @@
 {
-  "name": "dx-plugins",
-  "description": "Local plugins",
+  "name": "davidx-claude-plugins",
+  "description": "Claude Code plugins by davidx",
   "owner": {
     "name": "davidx"
   },
